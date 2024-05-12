@@ -4,7 +4,13 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timedelta
 from collections import defaultdict
+import logging
 
+# Configure logging
+logging.basicConfig(filename='script.log', level=logging.INFO)
+
+# Log a message indicating the script has run
+logging.info(f"Script executed on {datetime.now()}")
 # Function to send reminder emails
 def send_reminder_email(receiver_email, subject, message):
     # Email configuration
